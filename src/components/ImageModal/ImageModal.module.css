@@ -1,0 +1,62 @@
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: rgb(178, 178, 178);
+  padding: 8px;
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+  outline: none;
+  position: relative;
+}
+.wrapperModal {
+  background: rgba(0, 0, 0, 1);
+  position: relative;
+}
+
+.img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 5px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+.infoText {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+.blockInfo .infoText:hover {
+  opacity: 1;
+}
+
+.text {
+  color: #fff;
+}
+
+.span {
+  font-weight: bold;
+  color: #fff;
+}
