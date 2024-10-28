@@ -1,5 +1,10 @@
 import s from "./LoadMoreBtn.module.css";
-const LoadMoreBtn = ({ loadMoreImages }) => {
+
+interface PropsLoadMoreBtn {
+  loadMoreImages: () => void;
+}
+
+const LoadMoreBtn: React.FC<PropsLoadMoreBtn> = ({ loadMoreImages }) => {
   return (
     <button className={s.codepenButton} onClick={loadMoreImages}>
       <span>Load more</span>

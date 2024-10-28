@@ -1,9 +1,15 @@
 import s from "./SearchBar.module.css";
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-const SearchBar = ({ onSearch }) => {
+
+interface SearchBarProps {
+  onSearch: (value: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [query, setQuery] = useState("");
-  const handleSearch = (e) => {
+
+  const handleSearch: React.FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     if (!query.trim()) {
       toast.error("Введіть запит для пошуку");
@@ -12,7 +18,7 @@ const SearchBar = ({ onSearch }) => {
 
     onSearch(query);
     setQuery("");
-    e.target.reset();
+    e.currentTarget.reset();
   };
   return (
     <header className={s.searchBar}>
